@@ -51,6 +51,7 @@ h3 {
 
 a {
     text-decoration: none;
+    color: var(--black);
 }
 
 a:visited {
@@ -945,6 +946,14 @@ footer a:visited {
             max-width: 100%; 
         }
 
+        footer a {
+            color: var(--white);
+        }
+
+        footer a:visited {
+            color: var(--white);
+        }
+
         .footer-content {
             align-items: flex-start;
             flex-direction: column;
@@ -1094,6 +1103,14 @@ footer a:visited {
         .faq-question:after {
             position: static;
             margin-right: -15%;
+        }
+
+        footer a {
+            color: var(--white);
+        }
+
+        footer a:visited {
+            color: var(--white);
         }
         
         .footer-right {
