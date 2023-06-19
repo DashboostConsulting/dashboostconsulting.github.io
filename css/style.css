@@ -629,7 +629,6 @@ nav :checked ~ .burger-layer {
 .faq p {
     line-height: 1.6em;
     padding-bottom: 10px;
-    padding-right: 80px;
 }
 
 .faq-content {
@@ -974,12 +973,20 @@ footer a:visited {
     @media (max-width: 768px) {
 
         h1 {
-            font-size: 2.5em;
+            font-size: 2.2em;
         }
 
         .links a {
             font-size: 1.5em;
             padding: 1em 0 0 0;
+        }
+
+        .hero {
+            padding-top: 60px;
+        }
+
+        .logo-icon {
+            padding-right: 15px;
         }
 
         .cta {
@@ -1012,8 +1019,8 @@ footer a:visited {
         }
 
         .big-text {
-            font-size: 2.3em;
-            line-height: 3rem;
+            font-size: 1.8em;
+            line-height: 2.4rem;
         }
 
         .about-grid {
@@ -1079,9 +1086,18 @@ footer a:visited {
                 padding-top: 20px;
             }
 
+        .faq-question {
+            width: 85%;
+        }
+        
+        .faq-question:after {
+            position: static;
+            margin-right: -15%;
+        }
+        
         .footer-right {
-            align-items: flex-start;
-            flex-direction: column;
+        align-items: flex-start;
+        flex-direction: column;
         }
 
         .below-footer {
