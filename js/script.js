@@ -51,29 +51,37 @@
   window.addEventListener("scroll", reveal);
 
 //banner animation
-if (window.matchMedia("(max-width: 768px)")) {
-  function changeMargin() {
-    var scroll = (window.pageYOffset / 2.5);
-    var width = scroll;
-  
-    document.getElementById('banner-grid').style.marginLeft = width + 'px';
+
+
+ function myFunction(x) {
+  if (x.matches) { // If media query matches
+    function changeMargin() {
+      var scroll = (window.pageYOffset / 2.5);
+      var width = scroll;
+    
+      document.getElementById('banner-grid').style.marginLeft = width + 'px';
+    }
+    
+    window.addEventListener('scroll', function(){
+      requestAnimationFrame(changeMargin);
+     })
+  } else {
+    function changeMargin() {
+      var scroll = (window.pageYOffset / 10);
+      var width = scroll;
+    
+      document.getElementById('banner-grid').style.marginLeft = width + 'px';
+    }
+    
+    window.addEventListener('scroll', function(){
+      requestAnimationFrame(changeMargin);
+     })
   }
-  
-  window.addEventListener('scroll', function(){
-    requestAnimationFrame(changeMargin);
-   })
-} else {
-  function changeMargin() {
-    var scroll = (window.pageYOffset / 10);
-    var width = scroll;
-  
-    document.getElementById('banner-grid').style.marginLeft = width + 'px';
-  }
-  
-  window.addEventListener('scroll', function(){
-    requestAnimationFrame(changeMargin);
-   })
 }
+
+var x = window.matchMedia("(max-width: 768px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
 
 //sticker animation
 function rotateItem() {

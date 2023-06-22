@@ -1,7 +1,7 @@
 {
     "name": "Dashboost",
     "description": "Web app version of the Dashboost website",
-    "start_url": "https://dashboostconsulting.github.io",
+    "start_url": "https://www.dashboostconsulting.github.io/",
     "lang": "en-GB",
     "theme_color": "#FF553D",
     "display": "standalone",
