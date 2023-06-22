@@ -51,16 +51,29 @@
   window.addEventListener("scroll", reveal);
 
 //banner animation
-function changeMargin() {
-  var scroll = (window.pageYOffset / 10);
-  var width = scroll;
-
-  document.getElementById('banner-grid').style.marginLeft = width + 'px';
+if (window.matchMedia("(max-width: 768px)")) {
+  function changeMargin() {
+    var scroll = (window.pageYOffset / 2.5);
+    var width = scroll;
+  
+    document.getElementById('banner-grid').style.marginLeft = width + 'px';
+  }
+  
+  window.addEventListener('scroll', function(){
+    requestAnimationFrame(changeMargin);
+   })
+} else {
+  function changeMargin() {
+    var scroll = (window.pageYOffset / 10);
+    var width = scroll;
+  
+    document.getElementById('banner-grid').style.marginLeft = width + 'px';
+  }
+  
+  window.addEventListener('scroll', function(){
+    requestAnimationFrame(changeMargin);
+   })
 }
-
-window.addEventListener('scroll', function(){
-  requestAnimationFrame(changeMargin);
- })
 
 //sticker animation
 function rotateItem() {

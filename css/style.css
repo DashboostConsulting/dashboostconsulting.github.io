@@ -1011,6 +1011,11 @@ footer a:visited {
         .hero-p {
             padding-top: 20px;
         }
+
+        .banner-grid {
+            transform: translate3d(-400px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        }
+        
         
         .banner-grid-item img {
             width: 250px;
