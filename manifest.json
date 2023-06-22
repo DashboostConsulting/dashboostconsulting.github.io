@@ -1,0 +1,15 @@
+{
+    "name": "Dashboost",
+    "description": "Web app version of the Dashboost website",
+    "start_url": "https://dashboostconsulting.github.io",
+    "lang": "en-GB",
+    "theme_color": "#FF553D",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "img/logo-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
