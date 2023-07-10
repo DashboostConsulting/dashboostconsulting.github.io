@@ -699,6 +699,10 @@ footer {
     border-top: 10px solid var(--white);
 }
 
+footer a {
+    color: var(--white);
+}
+
 footer a:visited {
     color: var(--white);
 }
