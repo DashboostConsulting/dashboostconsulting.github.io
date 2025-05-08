@@ -1,43 +1,124 @@
-//close mobile menu when a link is clicked
+//navbar display
+document.addEventListener("DOMContentLoaded", function() {
+    var topLogo = document.querySelector('.top-logo');
+    var navbar = document.getElementById('navbar');
 
-    //define checkbox
-    var checkbox = document.querySelector( '#nav-toggle' );
-
-    //define nav links, so menu will close when click these
-    var navlinks = document.querySelector('#links');
-
-    //when you click links in the nav menu, the checkbox gets unchecked and menu closes
-    document.body.addEventListener('click', function (event) {
-        if (navlinks.contains(event.target)) {
-            checkbox.checked = false;
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > topLogo.offsetHeight) {
+            navbar.classList.add('unhide');
+        } else {
+            navbar.classList.remove('unhide');
         }
     });
+});
 
-    //adds event listener when you click on the burger menu
-    checkbox.addEventListener( 'click', function(){
-    if( this.checked ) {
-        document.addEventListener( 'click', navlinks );
-    } 
+//close mobile menu when a link is clicked
+var checkbox = document.querySelector( '#nav-toggle' );
+var navlinks = document.querySelector('#links');
+document.body.addEventListener('click', function (event) {
+    if (navlinks.contains(event.target)) {
+        checkbox.checked = false;
+    }
+});
+
+checkbox.addEventListener( 'click', function(){
+if( this.checked ) {
+    document.addEventListener( 'click', navlinks );
+} 
+});
+
+//bg hero shape movements
+document.addEventListener('scroll', function() {
+    var scrollTop = window.scrollY;
+    var parallaxElements = document.querySelectorAll('.hero .bg-shape');
+
+    parallaxElements.forEach(function(element, index) {
+        var translateY = -scrollTop * (index + 1) * 0.1; // Adjust the factor for the desired parallax effect
+        element.style.transform = 'translateY(' + translateY + 'px)';
     });
+});
+
+//banner animation
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+    const bannerGridItems = document.querySelectorAll('.banner-grid-item');
+  
+    bannerGridItems.forEach(function(item) {
+      const translateY = -scrollPosition / 8; // Adjust the speed of the scroll
+  
+      item.style.transform = 'translateX(' + translateY + 'px)';
+    });
+  });
+
+//portfolio top animation
+window.addEventListener('scroll', function() {
+  const scrollPosition = window.scrollY;
+  const bannerGridItems = document.querySelectorAll('.top-portfolio-grid .portfolio-grid-item');
+
+  bannerGridItems.forEach(function(item) {
+      let translateY;
+
+      // Check if the screen width is less than or equal to 768 pixels
+      if (window.matchMedia('(max-width: 768px)').matches) {
+          translateY = scrollPosition / 10; // Adjust the speed of the scroll for small screens
+      } else {
+          translateY = scrollPosition / 6; // Default scroll behavior for larger screens
+      }
+
+      item.style.transform = 'translateX(' + translateY + 'px)';
+  });
+});
+
+
+//portfolio bottom animation
+window.addEventListener('scroll', function() {
+  const scrollPosition = window.scrollY;
+  const bannerGridItems = document.querySelectorAll('.bottom-portfolio-grid .portfolio-grid-item');
+
+  bannerGridItems.forEach(function(item) {
+      let translateY;
+
+      // Check if the screen width is less than or equal to 768 pixels
+      if (window.matchMedia('(max-width: 768px)').matches) {
+          translateY = -scrollPosition / 10; // Adjust the speed of the scroll for small screens
+      } else {
+          translateY = -scrollPosition / 6; // Default scroll behavior for larger screens
+      }
+
+      item.style.transform = 'translateX(' + translateY + 'px)';
+  });
+});
+
+//partners animation
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+    const bannerGridItems = document.querySelectorAll('.partners-grid-item');
+  
+    bannerGridItems.forEach(function(item) {
+      const translateY = scrollPosition / 8; // Adjust the speed of the scroll
+  
+      item.style.transform = 'translateX(' + translateY + 'px)';
+    });
+  });
 
 //faq section open answer functionality
-    var acc = document.getElementsByClassName("faq-question");
-    var i;
-    
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-          panel.style.maxHeight = null;
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-      });
+var acc = document.getElementsByClassName("faq-question");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
     }
+  });
+}
 
 //animation trigger
-  function reveal() {
+function reveal() {
     var reveals = document.querySelectorAll(".fade-in, .fade-in-delay, .fade-in-delay-more");
     for (var i = 0; i < reveals.length; i++) {
       var windowHeight = window.innerHeight;
@@ -50,47 +131,8 @@
   }
   window.addEventListener("scroll", reveal);
 
-//banner animation
-
-
- function myFunction(x) {
-  if (x.matches) { // If media query matches
-    function changeMargin() {
-      var scroll = (window.pageYOffset / 2.5);
-      var width = scroll;
-    
-      document.getElementById('banner-grid').style.marginLeft = width + 'px';
-    }
-    
-    window.addEventListener('scroll', function(){
-      requestAnimationFrame(changeMargin);
-     })
-  } else {
-    function changeMargin() {
-      var scroll = (window.pageYOffset / 10);
-      var width = scroll;
-    
-      document.getElementById('banner-grid').style.marginLeft = width + 'px';
-    }
-    
-    window.addEventListener('scroll', function(){
-      requestAnimationFrame(changeMargin);
-     })
-  }
-}
-
-var x = window.matchMedia("(max-width: 768px)")
-myFunction(x) // Call listener function at run time
-x.addListener(myFunction) // Attach listener function on state changes
-
-//sticker animation
-function rotateItem() {
-  var scroll = (window.pageYOffset / 25);
-  var deg = scroll;
-
-  document.getElementById('sticker').style.transform = 'rotate('+deg+'deg)';
-}
-
-window.addEventListener('scroll', function(){
-  requestAnimationFrame(rotateItem);
- })
+// Animate elements on load
+window.addEventListener("DOMContentLoaded", () => {
+  const onLoadEls = document.querySelectorAll(".on-load");
+  onLoadEls.forEach(el => el.classList.add("after"));
+});
