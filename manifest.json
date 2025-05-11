@@ -1,15 +1,19 @@
 {
-    "name": "Dashboost",
-    "description": "Web app version of the Dashboost website",
-    "start_url": "https://www.dashboostconsulting.github.io/",
-    "lang": "en-GB",
-    "theme_color": "#FF553D",
-    "display": "standalone",
+    "name": "dashboostconsulting.github.io",
+    "short_name": "Dashboost",
     "icons": [
+      {
+        "src": "img/logo-192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
       {
         "src": "img/logo-512.png",
         "sizes": "512x512",
         "type": "image/png"
       }
-    ]
+    ],
+    "theme_color": "#F15959",
+    "background_color": "#FFF3EB",
+    "display": "standalone"
   }
