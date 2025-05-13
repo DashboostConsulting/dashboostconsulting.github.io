@@ -1111,9 +1111,9 @@ footer .logo-title {
         height: auto;
         width: auto;
         border-radius: 4%;
-        padding: 20px 30px;
+        padding: 15px 30px;
         letter-spacing: 0em;
-        border-radius: 2px;
+        border-radius: 10px;
         margin-top: 20px;
     }
 
@@ -1176,9 +1176,20 @@ footer .logo-title {
         font-size: 2.5em;
     }
 
+    .top-logo {
+        padding-top: 40px;
+    }
+
+    .hero {
+        padding-top: 40px;
+        padding-bottom: 10px;
+    }
+
     .big-text {
         font-size: 2.5em;
         line-height: 2.5rem;
+        padding-bottom: 20px;
+        padding-top: 20px;
     }
 
     .hero-p {
@@ -1191,14 +1202,30 @@ footer .logo-title {
 
     .about {
         margin: 20px 4% 0 4%;
+        padding: 20px 0 0px 0;
     }
 
     .benefits-label p {
         padding: 0 20px;
     }
 
+    .benefits-image {
+        height: 150px;
+        width: 150px;
+    }
+
+    .benefits-image img {
+        height: 50px;
+    }
+
+    .unlimited-icon img {
+        width: 50px;
+        height: auto;
+    }
+
     .sub-heading {
         font-size: 1.1em;
+        padding-bottom: 50px;
     }
 
     .portfolio-grid-item img {
@@ -1213,12 +1240,34 @@ footer .logo-title {
         padding-right: 25px;
     }
 
+    .service-list {
+        margin-top: 40px;
+    }
+
     .pricing-grid-item {
         padding: 30px 15px;
     }
 
     .pricing-list li {
         font-size: 0.9em;
+    }
+
+    .amount {
+        font-size: 2.5em;
+    }
+
+    .faq {
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+
+    .faq-content {
+        padding-top: 0px;
+    }
+
+    .below-footer {
+        display: block;
+        text-align: left;
     }
 
 }
