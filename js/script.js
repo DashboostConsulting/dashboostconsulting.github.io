@@ -50,23 +50,28 @@ window.addEventListener('scroll', function() {
     });
   });
 
-//portfolio top animation
-window.addEventListener('scroll', function() {
-  const scrollPosition = window.scrollY;
-  const bannerGridItems = document.querySelectorAll('.top-portfolio-grid .portfolio-grid-item');
-
-  bannerGridItems.forEach(function(item) {
-      let translateY;
-
-      // Check if the screen width is less than or equal to 768 pixels
-      if (window.matchMedia('(max-width: 768px)').matches) {
-          translateY = scrollPosition / 10; // Adjust the speed of the scroll for small screens
-      } else {
-          translateY = scrollPosition / 6; // Default scroll behavior for larger screens
-      }
-
-      item.style.transform = 'translateX(' + translateY + 'px)';
-  });
+  window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+    const bannerGridItems = document.querySelectorAll('.top-portfolio-grid .portfolio-grid-item');
+    
+    bannerGridItems.forEach(function(item) {
+        let translateY;
+        
+        // Check if the screen width is less than or equal to 450 pixels (smallest screens)
+        if (window.matchMedia('(max-width: 450px)').matches) {
+            translateY = scrollPosition / 20; // Slowest scroll speed for the smallest screens
+        }
+        // Check if the screen width is less than or equal to 768 pixels (medium screens)
+        else if (window.matchMedia('(max-width: 768px)').matches) {
+            translateY = scrollPosition / 10; // Adjust the speed of the scroll for small screens
+        } 
+        // For larger screens
+        else {
+            translateY = scrollPosition / 6; // Default scroll behavior for larger screens
+        }
+        
+        item.style.transform = 'translateX(' + translateY + 'px)';
+    });
 });
 
 
@@ -78,28 +83,22 @@ window.addEventListener('scroll', function() {
   bannerGridItems.forEach(function(item) {
       let translateY;
 
-      // Check if the screen width is less than or equal to 768 pixels
-      if (window.matchMedia('(max-width: 768px)').matches) {
-          translateY = -scrollPosition / 10; // Adjust the speed of the scroll for small screens
-      } else {
-          translateY = -scrollPosition / 6; // Default scroll behavior for larger screens
-      }
+      // Check if the screen width is less than or equal to 450 pixels (smallest screens)
+      if (window.matchMedia('(max-width: 450px)').matches) {
+        translateY = -scrollPosition / 20; // Slowest scroll speed for the smallest screens
+    }
+    // Check if the screen width is less than or equal to 768 pixels (medium screens)
+    else if (window.matchMedia('(max-width: 768px)').matches) {
+        translateY = -scrollPosition / 10; // Adjust the speed of the scroll for small screens
+    } 
+    // For larger screens
+    else {
+        translateY = -scrollPosition / 6; // Default scroll behavior for larger screens
+    }
 
       item.style.transform = 'translateX(' + translateY + 'px)';
   });
 });
-
-//partners animation
-window.addEventListener('scroll', function() {
-    const scrollPosition = window.scrollY;
-    const bannerGridItems = document.querySelectorAll('.partners-grid-item');
-  
-    bannerGridItems.forEach(function(item) {
-      const translateY = scrollPosition / 8; // Adjust the speed of the scroll
-  
-      item.style.transform = 'translateX(' + translateY + 'px)';
-    });
-  });
 
 //faq section open answer functionality
 var acc = document.getElementsByClassName("faq-question");
